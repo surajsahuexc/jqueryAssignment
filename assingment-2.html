@@ -9,19 +9,15 @@
     <script src="../assets/jquery-3.4.1.js"></script>
     <script>
         $(document).ready(function () {
-
             $('form').submit(function () {
-
                 var mail = $('#mail').val();
                 var pass = $('#pass').val();
                 var pass1 = $('#pass1').val();
                 var trm = $('#check').val();
-
                 if (mail == "") {
                     alert("Error");
                 }
                 else if (pass != pass1) {
-
                     alert("Confirm Password Mismatch");
                 }
                 else if (trm != 'on') {
@@ -29,19 +25,15 @@
                 }
                 else {
                     alert("Submited");
-
                 }
-
             });
         });
-
     </script>
 </head>
 
 <body>
     <form id="formone">
         <table border="1">
-
             <tr>
                 <th>Email</th>
                 <td>
@@ -62,12 +54,8 @@
             </tr>
         </table>
         Agree To Terms And Conditions
-        <input type="checkbox" id="check" name="check" /><br>
-
-        <br>
+        <input type="checkbox" id="check" name="check" /><br><br>
         <input type="submit" id="name" name="name" value="Submit" />
-
-
     </form>
 </body>
 
