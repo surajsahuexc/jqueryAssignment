@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./assets/jquery-3.4.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#clickId').click(function(event) {
+                AllAlerts("Alert For Click Function");
+                event.preventDefault();
+            });
+            $('#hoverId').hover(function() {
+                AllAlerts("Alert for hover functionn");
+            });
+            $('#focusId').focus(function() {
+                AllAlerts("Alert for focus function");
+            });
+            $('#mouseoverId').mouseover(function() {
+                AllAlerts("Alert for mouseover function");
+            });
+            $('#mouseoutId').mouseout(function() {
+                AllAlerts("Alert for mouseout function");
+            });
+        });
+
+        function AllAlerts(msg) {
+            alert(msg);
+        }
+    </script>
+</head>
+
+<body>
+    <a href="https://www.w3schools.com/jquery/jquery_events.asp" id="clickId">ClickButton</a>&nbsp;
+    <a href="https://www.w3schools.com/jquery/jquery_events.asp" id="hoverId">HoverButton</a>&nbsp;
+    <a href="https://www.w3schools.com/jquery/jquery_events.asp" id="focusId">FocusButton</a>&nbsp;
+    <a href="https://www.w3schools.com/jquery/jquery_events.asp" id="mouseoverId">MouseoverButton</a>&nbsp;
+    <a href="https://www.w3schools.com/jquery/jquery_events.asp" id="mouseoutId">MouseoutButton</a>
+</body>
+
+</html>
