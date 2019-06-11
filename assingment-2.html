@@ -8,22 +8,19 @@
     <title>Document</title>
     <script src="../assets/jquery-3.4.1.js"></script>
     <script>
-        $(document).ready(function () {
-            $('form').submit(function () {
+        $(document).ready(function() {
+            $('form').submit(function() {
                 var mail = $('#mail').val();
                 var pass = $('#pass').val();
                 var pass1 = $('#pass1').val();
                 var trm = $('#check').val();
                 if (mail == "") {
                     alert("Error");
-                }
-                else if (pass != pass1) {
+                } else if (pass != pass1) {
                     alert("Confirm Password Mismatch");
-                }
-                else if (trm != 'on') {
+                } else if (trm != 'on') {
                     alert("Please Agree To Terms and Conditions");
-                }
-                else {
+                } else {
                     alert("Submited");
                 }
             });
