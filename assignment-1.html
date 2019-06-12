@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./assets/jquery-3.4.1.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function() {
+            $("input[type='checkbox']").click(function() {
+                $(this).siblings('ul').find("input[type='checkbox']").prop('checked', this.checked);
+            });
+            $("li:has(li) > input[type='checkbox']").click(function() {
+                $(this).siblings('ul').find("input[type='checkbox']").prop('checked', this.checked);
+            });
+            $("input[type='checkbox'] ~ ul input[type='checkbox']").click(function() {
+                $(this).closest("li:has(li)").children("input[type='checkbox']").prop('checked', $(this)
+                    .closest('ul').find("input[type='checkbox']").is(':checked'));
+            });
+        });
+    </script>
+    <style>
+        .parentCheckbox {
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>
+        Manage Permission
+    </h3>
+    <ul class="parentCheckbox">
+        <li>
+            <input type="checkbox" />Property
+            <ul class="parentCheckbox">
+                <li>
+                    <input type="checkbox" />Edit Property
+                </li>
+                <li>
+                    <input type="checkbox" />Remove Property
+                </li>
+                <li>
+                    <input type="checkbox" />Add Property
+                </li>
+            </ul>
+        </li>
+        <li>
+            <input type="checkbox" />Testimonial
+            <ul class="parentCheckbox">
+                <li>
+                    <input type="checkbox" />Add
+                </li>
+                <li>
+                    <input type="checkbox" />Remove
+                </li>
+                <li>
+                    <input type="checkbox" />View
+                </li>
+                <li>
+                    <input type="checkbox" />Edit
+                </li>
+            </ul>
+        </li>
+        <li>
+            <input type="checkbox" />Users
+            <ul class="parentCheckbox">
+                <li>
+                    <input type="checkbox" />Edit User
+                </li>
+                <li>
+                    <input type="checkbox" />View User List
+                </li>
+                <li>
+                    <input type="checkbox" />Add User
+                </li>
+            </ul>
+        </li>
+        <li>
+            <input type="checkbox" />Membership
+            <ul class="parentCheckbox">
+                <li>
+                    <input type="checkbox" />Edit Membership
+                </li>
+                <li>
+                    <input type="checkbox" />Remove Membership
+                </li>
+                <li>
+                    <input type="checkbox" />Add Membership
+                </li>
+            </ul>
+        </li>
+    </ul>
+</body>
+
+</html>
