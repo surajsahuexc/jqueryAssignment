@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./assets/jquery-3.4.1.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function() {
+            var max = 10;
+            var min = 1;
+            $('.add').click(function(e) {
+                e.preventDefault();
+                if (min < max) {
+                    min++;
+                    $('.newDiv').append('<div class="fieldDiv"><input type="text" /><input type="button" value="Browser" /><select class="selectId"><option value="1">Primary Image</option><option value="2">Secondary Image</option></select><input type="button" class="remove" value="Remove" /></div>')
+                    $('.selectId').val(2);
+                }
+            })
+            $('.newDiv').on("click", ".remove", function(e) {
+                e.preventDefault();
+                $(this).parent('div').remove();
+                min--;
+            });
+        });
+    </script>
+    <style>
+        .fieldDiv {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fieldDiv">
+        <input type="text" />
+        <input type="button" value="Browser" />
+        <select>
+            <option value="1">Primary Image</option>
+            <option value="2">Secondary Image</option>
+        </select>
+        <input type="button" class="remove" value="Remove" />
+    </div>
+    <div class="newDiv"></div>
+    <div class="add">
+        <a href="#">Add Another</a>
+    </div>
+</body>
+
+</html>
