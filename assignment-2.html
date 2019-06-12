@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var pArray = {
+            "persons": [{
+                "FirstName": "Suraj",
+                "LastName": "Sahu",
+                "DOB": "31-08-1995"
+            }, {
+                "FirstName": "Salman",
+                "LastName": "khan",
+                "DOB": "12-06-1965"
+            }]
+        }
+        var i = 0;
+        document.writeln('<table border="1"><tr>');
+        for (i = 0; i < pArray.persons.length; i++) {
+            document.writeln('<td><table border="1">')
+            document.writeln("<tr><td><b>First Name</b></td><td>" + pArray.persons[i].FirstName + "</td></tr>");
+            document.writeln("<tr><td><b>Last Name</b></td><td>" + pArray.persons[i].LastName + "</td></tr>");
+            document.writeln("<tr><td><b>DOB</b></td><td>" + pArray.persons[i].DOB + "</td></tr>");
+            document.writeln("</table></td>")
+        }
+        document.writeln('</tr></table>');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
