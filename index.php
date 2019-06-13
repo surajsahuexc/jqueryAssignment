@@ -15,20 +15,18 @@
         }, 1000);
 
         function loadData() {
-            // alert("hello");
-            //console.log("1111111111111111111111")
             try {
                 $.ajax({
-                    url: 'fetchData.php',
-                    success: function(result) {
+                    url: 'fetchData.php', })
+                    .done(function(result) {
                         var string = '<table border="1"><tr><th>Name</th> <th>Email</th> <th>Message</th> <th>Date</th></tr>';
                         $.each(result, function(key, value) {
                             string += "<tr><td>" + value['name'] + "</td> <td> " + value['email'] + '<td> ' + value['message'] + '</td> <td> ' + value['date'] + "</td> </tr>";
                         });
                         string += '</table>';
                         $('#dataDiv').html(string);
-                    }
-                })
+                    });
+               
             } catch (e) {
                 console.log(e)
             }
