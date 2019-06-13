@@ -17,7 +17,8 @@
         function loadData() {
             try {
                 $.ajax({
-                    url: 'fetchData.php', })
+                        url: 'fetchData.php',
+                    })
                     .done(function(result) {
                         var string = '<table border="1"><tr><th>Name</th> <th>Email</th> <th>Message</th> <th>Date</th></tr>';
                         $.each(result, function(key, value) {
@@ -26,11 +27,11 @@
                         string += '</table>';
                         $('#dataDiv').html(string);
                     });
-               
+
             } catch (e) {
                 console.log(e)
             }
-        };
+        }
     </script>
 </head>
 
